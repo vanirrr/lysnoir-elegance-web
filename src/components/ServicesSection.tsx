@@ -1,40 +1,30 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, Smartphone, Database, Palette, Globe, Zap } from 'lucide-react';
+import { Code, Palette, Rocket, Shield } from 'lucide-react';
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   const services = [
     {
-      icon: Globe,
-      title: 'Sites vitrines élégants',
-      description: 'Des sites web sophistiqués qui reflètent l\'excellence de votre marque'
+      icon: <Code className="w-8 h-8" />,
+      title: 'Développement Web',
+      description: 'Sites web sur mesure avec les dernières technologies React, TypeScript et frameworks modernes.'
     },
     {
-      icon: Code,
-      title: 'Panneaux d\'administration personnalisés',
-      description: 'Interfaces de gestion sur mesure pour contrôler votre contenu'
+      icon: <Palette className="w-8 h-8" />,
+      title: 'Design Premium',
+      description: 'Identité visuelle unique et design sophistiqué pour une expérience utilisateur exceptionnelle.'
     },
     {
-      icon: Smartphone,
-      title: 'Responsive et mobile-first',
-      description: 'Expérience optimale sur tous les appareils et écrans'
+      icon: <Rocket className="w-8 h-8" />,
+      title: 'Performance',
+      description: 'Optimisation avancée pour des sites ultra-rapides et un référencement naturel optimal.'
     },
     {
-      icon: Database,
-      title: 'Intégration de base de données',
-      description: 'Solutions complètes avec Supabase, Firebase et autres technologies'
-    },
-    {
-      icon: Palette,
-      title: 'Branding visuel et logos',
-      description: 'Identité visuelle cohérente et mémorable pour votre entreprise'
-    },
-    {
-      icon: Zap,
-      title: 'Performance et vitesse',
-      description: 'Sites ultra-rapides optimisés pour les moteurs de recherche'
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Sécurité',
+      description: 'Protection renforcée et hébergement sécurisé pour la tranquillité de votre entreprise.'
     }
   ];
 
@@ -43,10 +33,10 @@ const ServicesSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.service-item').forEach((item, index) => {
+            entry.target.querySelectorAll('.service-card').forEach((card, index) => {
               setTimeout(() => {
-                item.classList.add('animate-fade-in-up');
-              }, index * 100);
+                card.classList.add('animate-fade-in-up');
+              }, index * 150);
             });
           }
         });
@@ -64,61 +54,41 @@ const ServicesSection = () => {
   return (
     <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Image */}
-          <div className="relative">
-            <div className="glass-card p-8 rounded-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80"
-                alt="Développeur travaillant sur du code"
-                className="w-full h-80 object-cover rounded-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
-              {/* Icon logo overlay */}
-              <div className="absolute top-4 right-4">
-                <img 
-                  src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
-                  alt="Lysnoir Icon" 
-                  className="h-8 w-auto opacity-60"
-                />
-              </div>
-            </div>
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center mb-6">
+            <img 
+              src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
+              alt="Lysnoir Icon" 
+              className="h-16 w-auto mr-4 opacity-80"
+            />
+            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              Nos <span className="text-gray-300">services</span>
+            </h2>
           </div>
+          <p className="text-xl text-gray-400 font-roboto font-light max-w-2xl mx-auto">
+            Des solutions web complètes pour propulser votre présence digitale vers l'excellence
+          </p>
+        </div>
 
-          {/* Right side - Services */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-roboto font-bold text-white letter-spacing-tight">
-                Ce que nous <span className="text-gray-300">proposons</span>
-              </h2>
-              <p className="text-xl text-gray-400 font-roboto font-light">
-                Des solutions web premium adaptées à vos besoins d'excellence
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="service-card glass-card p-8 text-center opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
+            >
+              <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                {service.icon}
+              </div>
+              
+              <h3 className="text-xl font-roboto font-bold text-white mb-4">
+                {service.title}
+              </h3>
+              
+              <p className="text-gray-400 font-roboto font-light leading-relaxed">
+                {service.description}
               </p>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {services.map((service, index) => (
-                <div
-                  key={service.title}
-                  className="service-item glass-card p-6 opacity-0 translate-y-12 transition-all duration-500 hover:scale-105"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <service.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-roboto font-bold text-white mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-400 font-roboto font-light text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

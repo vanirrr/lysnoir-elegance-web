@@ -8,7 +8,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       name: 'Horizon Immobilier',
-      image: '/lovable-uploads/f130e79f-7c9e-4041-bf9d-167ac25808a5.png',
+      image: '/lovable-uploads/c5bb03f7-286d-4a55-b220-b9764b8e4d09.png',
       tags: ['React', 'TypeScript', 'Tailwind'],
       link: 'https://horizon-immobilier.netlify.app',
       description: 'Agence immobilière basée en Algérie'
@@ -22,7 +22,7 @@ const ProjectsSection = () => {
     },
     {
       name: 'Nocturne',
-      image: '/lovable-uploads/ed7b0adc-da1e-4a82-bc85-2174e1c7c5da.png',
+      image: '/lovable-uploads/b8689afb-31b5-4ddc-8b75-969b25bc5b18.png',
       tags: ['Next.js', 'Firebase', 'E-commerce'],
       link: 'https://nocturne-demo.netlify.app',
       description: 'Boutique de vêtements en Algérie'
@@ -60,7 +60,7 @@ const ProjectsSection = () => {
             <img 
               src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
-              className="h-12 w-auto mr-4 opacity-80"
+              className="h-16 w-auto mr-4 opacity-80"
             />
             <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
               Nos <span className="text-gray-300">créations</span>

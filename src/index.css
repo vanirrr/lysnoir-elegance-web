@@ -57,7 +57,7 @@ All colors MUST be HSL.
 
   body {
     @apply text-foreground font-roboto;
-    background: linear-gradient(135deg, #000000 0%, #111111 50%, #0a0a0a 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0d0d0d 100%);
     min-height: 100vh;
   }
 
