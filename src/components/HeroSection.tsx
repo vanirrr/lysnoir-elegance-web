@@ -9,7 +9,10 @@ const HeroSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            const content = entry.target.querySelector('.hero-content');
+            if (content) {
+              content.classList.add('animate-fade-in-up');
+            }
           }
         });
       },
@@ -43,7 +46,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="space-y-8 opacity-0 translate-y-24" style={{animation: 'fade-in-up 1s ease-out forwards'}}>
+        <div className="hero-content space-y-8 opacity-0 translate-y-24 transition-all duration-1000">
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-helvetica font-bold text-white letter-spacing-tight text-shadow">
             Lysnoir

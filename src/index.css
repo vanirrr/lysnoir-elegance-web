@@ -82,4 +82,10 @@ All colors MUST be HSL.
   .letter-spacing-tight {
     letter-spacing: -0.025em;
   }
+
+  .animate-fade-in-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
 }
