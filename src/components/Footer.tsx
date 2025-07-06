@@ -4,14 +4,21 @@ import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
+    <footer id="contact" className="bg-black py-16 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Logo and heading */}
           <div className="space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-helvetica font-bold text-white letter-spacing-tight">
-              Lysnoir
-            </h2>
+            <div className="flex items-center justify-center mb-6">
+              <img 
+                src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+                alt="Lysnoir Icon" 
+                className="h-12 w-auto mr-4 opacity-80"
+              />
+              <h2 className="text-4xl lg:text-5xl font-helvetica font-bold text-white letter-spacing-tight">
+                Lysnoir
+              </h2>
+            </div>
             <p className="text-xl text-gray-300 font-roboto font-light">
               Prêt à créer quelque chose d'exceptionnel ensemble ?
             </p>

@@ -9,7 +9,10 @@ const AboutSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            const content = entry.target.querySelector('.about-content');
+            if (content) {
+              content.classList.add('animate-fade-in-up');
+            }
           }
         });
       },
@@ -26,10 +29,17 @@ const AboutSection = () => {
   return (
     <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8 opacity-0 translate-y-12">
-          <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
-            À propos de <span className="text-gray-300">Lysnoir</span>
-          </h2>
+        <div className="about-content space-y-8 opacity-0 translate-y-12 transition-all duration-1000">
+          <div className="flex items-center justify-center mb-8">
+            <img 
+              src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+              alt="Lysnoir Icon" 
+              className="h-16 w-auto mr-4 opacity-80"
+            />
+            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              À propos de <span className="text-gray-300">Lysnoir</span>
+            </h2>
+          </div>
           
           <div className="space-y-6 text-lg lg:text-xl text-gray-300 font-roboto font-light leading-relaxed">
             <p>

@@ -34,7 +34,7 @@ const HeroSection = () => {
     <section 
       ref={heroRef}
       id="accueil" 
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
@@ -48,15 +48,6 @@ const HeroSection = () => {
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-helvetica font-bold text-white letter-spacing-tight text-shadow">
             Lysnoir
           </h1>
-
-          {/* Subtitle */}
-          <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-roboto font-bold text-white letter-spacing-tight text-shadow">
-              Élégance
-              <br />
-              <span className="text-gray-300">Redéfinie</span>
-            </h2>
-          </div>
 
           {/* Description */}
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-roboto font-light max-w-3xl mx-auto leading-relaxed">

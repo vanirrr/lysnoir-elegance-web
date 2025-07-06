@@ -62,9 +62,16 @@ const ProjectsSection = () => {
     <section ref={sectionRef} id="projets" className="py-20 lg:py-32 bg-black relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight mb-6">
-            Nos <span className="text-gray-300">Créations</span>
-          </h2>
+          <div className="flex items-center justify-center mb-6">
+            <img 
+              src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+              alt="Lysnoir Icon" 
+              className="h-12 w-auto mr-4 opacity-60"
+            />
+            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              Nos <span className="text-gray-300">Créations</span>
+            </h2>
+          </div>
           <p className="text-xl text-gray-400 font-roboto font-light max-w-2xl mx-auto">
             Découvrez notre portfolio de sites web premium créés pour des marques d'exception
           </p>

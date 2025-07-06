@@ -34,15 +34,17 @@ const Navigation = () => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-xl bg-black/20 border-b border-white/10' : 'bg-transparent'
+        isScrolled ? 'backdrop-blur-xl bg-black/80 border-b border-white/10' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <span className="text-2xl lg:text-3xl font-helvetica font-bold text-white letter-spacing-tight">
-                Lysnoir
-              </span>
+            <div className="flex-shrink-0 flex items-center">
+              <img 
+                src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+                alt="Lysnoir Logo" 
+                className="h-8 lg:h-10 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}
