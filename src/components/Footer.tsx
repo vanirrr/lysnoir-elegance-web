@@ -4,14 +4,14 @@ import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-black py-16 border-t border-white/10">
+    <footer id="contact" className="bg-transparent py-16 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Logo and heading */}
           <div className="space-y-4">
             <div className="flex items-center justify-center mb-6">
               <img 
-                src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+                src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
                 alt="Lysnoir Icon" 
                 className="h-12 w-auto mr-4 opacity-80"
               />

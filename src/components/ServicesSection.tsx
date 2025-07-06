@@ -62,7 +62,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-black">
+    <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image */}
@@ -77,7 +77,7 @@ const ServicesSection = () => {
               {/* Icon logo overlay */}
               <div className="absolute top-4 right-4">
                 <img 
-                  src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+                  src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
                   alt="Lysnoir Icon" 
                   className="h-8 w-auto opacity-60"
                 />

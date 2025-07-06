@@ -27,12 +27,12 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-black">
+    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="about-content space-y-8 opacity-0 translate-y-12 transition-all duration-1000">
           <div className="flex items-center justify-center mb-8">
             <img 
-              src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+              src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
               className="h-16 w-auto mr-4 opacity-80"
             />

@@ -4,29 +4,28 @@ import { ExternalLink } from 'lucide-react';
 
 const ProjectsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   const projects = [
     {
       name: 'Horizon Immobilier',
-      description: 'Agence immobilière premium en Algérie',
-      image: '/lovable-uploads/ed7b0adc-da1e-4a82-bc85-2174e1c7c5da.png',
-      tags: ['React', 'TypeScript', 'Tailwind CSS'],
-      url: 'https://horizon-immobilier.netlify.app'
+      image: '/lovable-uploads/f130e79f-7c9e-4041-bf9d-167ac25808a5.png',
+      tags: ['React', 'TypeScript', 'Tailwind'],
+      link: 'https://horizon-immobilier.netlify.app',
+      description: 'Agence immobilière basée en Algérie'
     },
     {
       name: 'Pure',
-      description: 'Marque de soins de la peau en Algérie',
       image: '/lovable-uploads/8238e631-ae25-4cb5-9d6f-de21c88cd120.png',
-      tags: ['React', 'Supabase', 'Animation'],
-      url: 'https://pure-demo.netlify.app'
+      tags: ['React', 'Supabase', 'Responsive'],
+      link: 'https://pure-demo.netlify.app',
+      description: 'Marque de soins de la peau en Algérie'
     },
     {
       name: 'Nocturne',
-      description: 'Boutique de vêtements de luxe en Algérie',
-      image: '/lovable-uploads/f130e79f-7c9e-4041-bf9d-167ac25808a5.png',
-      tags: ['React', 'E-commerce', 'Design System'],
-      url: 'https://nocturne-demo.netlify.app'
+      image: '/lovable-uploads/ed7b0adc-da1e-4a82-bc85-2174e1c7c5da.png',
+      tags: ['Next.js', 'Firebase', 'E-commerce'],
+      link: 'https://nocturne-demo.netlify.app',
+      description: 'Boutique de vêtements en Algérie'
     }
   ];
 
@@ -35,15 +34,10 @@ const ProjectsSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animate cards one by one
-            cardsRef.current.forEach((card, index) => {
-              if (card) {
-                setTimeout(() => {
-                  card.classList.add('animate-fade-in-up');
-                  card.style.opacity = '1';
-                  card.style.transform = 'translateY(0)';
-                }, index * 200);
-              }
+            entry.target.querySelectorAll('.project-card').forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('animate-fade-in-up');
+              }, index * 200);
             });
           }
         });
@@ -59,21 +53,21 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projets" className="py-20 lg:py-32 bg-black relative">
+    <section ref={sectionRef} id="projets" className="py-20 lg:py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <img 
-              src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
+              src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
-              className="h-12 w-auto mr-4 opacity-60"
+              className="h-12 w-auto mr-4 opacity-80"
             />
             <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
-              Nos <span className="text-gray-300">Créations</span>
+              Nos <span className="text-gray-300">créations</span>
             </h2>
           </div>
           <p className="text-xl text-gray-400 font-roboto font-light max-w-2xl mx-auto">
-            Découvrez notre portfolio de sites web premium créés pour des marques d'exception
+            Découvrez notre portfolio de sites web premium, conçus pour des marques d'exception
           </p>
         </div>
 
@@ -81,52 +75,45 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={project.name}
-              ref={(el) => {
-                if (el) cardsRef.current[index] = el;
-              }}
-              className="glass-card p-6 group hover:scale-105 transition-all duration-500 opacity-0 translate-y-12"
-              style={{ transitionDelay: `${index * 100}ms` }}
+              className="project-card glass-card p-6 opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
             >
-              {/* Project Image */}
-              <div className="aspect-video mb-6 overflow-hidden rounded-xl bg-gray-800">
+              <div className="aspect-video mb-6 overflow-hidden rounded-xl">
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-
-              {/* Project Info */}
+              
               <div className="space-y-4">
-                <div>
-                  <h3 className="text-2xl font-roboto font-bold text-white mb-2">
-                    {project.name}
-                  </h3>
-                  <p className="text-gray-400 font-roboto font-light">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tags */}
+                <h3 className="text-2xl font-roboto font-bold text-white">
+                  {project.name}
+                </h3>
+                
+                <p className="text-gray-400 font-roboto font-light">
+                  {project.description}
+                </p>
+                
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm bg-white/10 text-gray-300 rounded-full font-roboto font-medium"
+                      className="px-3 py-1 text-xs font-roboto font-medium text-white bg-white/10 rounded-full border border-white/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                {/* CTA Button */}
-                <button
-                  onClick={() => window.open(project.url, '_blank')}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-all duration-300 font-roboto font-medium hover:scale-105"
+                
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glow-button inline-flex items-center gap-2 px-6 py-3 text-sm font-roboto font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-gray-100"
                 >
-                  Voir le Projet
-                  <ExternalLink size={18} />
-                </button>
+                  Voir le projet
+                  <ExternalLink size={16} />
+                </a>
               </div>
             </div>
           ))}
