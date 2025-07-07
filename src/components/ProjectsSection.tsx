@@ -60,7 +60,7 @@ const ProjectsSection = () => {
             <img 
               src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
-              className="h-16 w-auto mr-4 opacity-80"
+              className="h-28 w-auto mr-4 opacity-80"
             />
             <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
               Nos <span className="text-gray-300">créations</span>

@@ -47,6 +47,15 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="hero-content space-y-8 opacity-0 translate-y-24 transition-all duration-1000">
+          {/* Icon Logo above heading */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
+              alt="Lysnoir Icon" 
+              className="h-48 w-auto opacity-90"
+            />
+          </div>
+
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-8xl font-helvetica font-bold text-white letter-spacing-tight text-shadow">
             Lysnoir
