@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ExternalLink } from 'lucide-react';
 
@@ -52,7 +53,7 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projets" className="py-20 lg:py-32">
+    <section ref={sectionRef} id="projets" className="py-20 lg:py-32 bg-black/70 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="projects-content space-y-16 opacity-0 translate-y-12 transition-all duration-1000">
           {/* Section Header */}
@@ -61,7 +62,7 @@ const ProjectsSection = () => {
               <img 
                 src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
                 alt="Lysnoir Icon" 
-                className="h-28 w-auto mr-4 opacity-80"
+                className="h-49 w-auto mr-4 opacity-80"
               />
               <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
                 Nos <span className="text-gray-300">créations</span>

@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-16 border-t border-white/10">
+    <footer id="contact" className="py-16 border-t border-white/10 bg-black/70 backdrop-blur-sm">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Logo and heading */}
@@ -12,7 +13,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
                 alt="Lysnoir Icon" 
-                className="h-28 w-auto mr-4 opacity-80"
+                className="h-49 w-auto mr-4 opacity-80"
               />
               <h2 className="text-4xl lg:text-5xl font-helvetica font-bold text-white letter-spacing-tight">
                 Lysnoir
