@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const AboutSection = () => {
@@ -27,7 +26,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-transparent">
+    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="about-content space-y-8 opacity-0 translate-y-12 transition-all duration-1000">
           <div className="flex items-center justify-center mb-8">

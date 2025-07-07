@@ -3,7 +3,7 @@ import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-transparent py-16 border-t border-white/10">
+    <footer id="contact" className="py-16 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Logo and heading */}
