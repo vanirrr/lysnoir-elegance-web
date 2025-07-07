@@ -27,33 +27,33 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-black/70 backdrop-blur-sm">
+    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="about-content space-y-8 opacity-0 translate-y-12 transition-all duration-1000">
+        <div className="about-content space-y-8">
           <div className="flex items-center justify-center mb-8">
             <img 
               src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
               className="h-61.25 w-auto mr-4 opacity-80"
             />
-            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight text-shadow">
               À propos de <span className="text-gray-300">Lysnoir</span>
             </h2>
           </div>
           
           <div className="space-y-6 text-lg lg:text-xl text-gray-300 font-roboto font-light leading-relaxed">
-            <p>
+            <p className="text-shadow">
               <strong className="font-bold text-white">Lysnoir</strong> est une agence de développement web premium basée en Algérie, 
               spécialisée dans la création de sites web d'exception pour les entreprises et marques de prestige.
             </p>
             
-            <p>
+            <p className="text-shadow">
               Notre mission est de redéfinir l'<strong className="font-bold text-white">élégance digitale</strong> en alliant 
               design sophistiqué, performance technique et identité visuelle unique. Chaque projet que nous réalisons 
               reflète notre engagement envers l'excellence et l'innovation.
             </p>
             
-            <p>
+            <p className="text-shadow">
               Nous créons des expériences web qui marquent les esprits et propulsent nos clients vers de nouveaux sommets. 
               Votre <strong className="font-bold text-white">réussite digitale</strong> est notre obsession.
             </p>
@@ -61,7 +61,7 @@ const AboutSection = () => {
 
           <div className="pt-8">
             <div className="glass-card inline-block px-8 py-4">
-              <p className="text-white font-roboto font-medium text-lg">
+              <p className="text-white font-roboto font-medium text-lg text-shadow">
                 "L'excellence n'est pas un acte, mais une habitude"
               </p>
             </div>

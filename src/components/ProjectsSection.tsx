@@ -34,6 +34,10 @@ const ProjectsSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const content = entry.target.querySelector('.projects-content');
+            if (content) {
+              content.classList.add('animate-fade-in-up');
+            }
             entry.target.querySelectorAll('.project-card').forEach((card, index) => {
               setTimeout(() => {
                 card.classList.add('animate-fade-in-up');
@@ -53,9 +57,9 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projets" className="py-20 lg:py-32 bg-black/70 backdrop-blur-sm">
+    <section ref={sectionRef} id="projets" className="py-20 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="projects-content space-y-16 opacity-0 translate-y-12 transition-all duration-1000">
+        <div className="projects-content space-y-16">
           {/* Section Header */}
           <div className="text-center">
             <div className="flex items-center justify-center mb-8">
@@ -64,11 +68,11 @@ const ProjectsSection = () => {
                 alt="Lysnoir Icon" 
                 className="h-49 w-auto mr-4 opacity-80"
               />
-              <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight text-shadow">
                 Nos <span className="text-gray-300">créations</span>
               </h2>
             </div>
-            <p className="text-xl text-gray-300 font-roboto font-light max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 font-roboto font-light max-w-2xl mx-auto text-shadow">
               Une sélection de nos réalisations les plus remarquables
             </p>
           </div>
@@ -78,7 +82,7 @@ const ProjectsSection = () => {
             {projects.map((project, index) => (
               <div
                 key={project.name}
-                className="project-card glass-card p-6 opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
+                className="project-card glass-card p-6 transition-all duration-500 hover:scale-105 group"
               >
                 <div className="aspect-video mb-6 overflow-hidden rounded-xl">
                   <img
@@ -89,11 +93,11 @@ const ProjectsSection = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-roboto font-bold text-white">
+                  <h3 className="text-2xl font-roboto font-bold text-white text-shadow">
                     {project.name}
                   </h3>
                   
-                  <p className="text-gray-400 font-roboto font-light">
+                  <p className="text-gray-300 font-roboto font-light text-shadow">
                     {project.description}
                   </p>
                   
@@ -101,7 +105,7 @@ const ProjectsSection = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-xs font-roboto font-medium text-white bg-white/10 rounded-full border border-white/20"
+                        className="px-3 py-1 text-xs font-roboto font-medium text-white bg-white/20 rounded-full border border-white/30"
                       >
                         {tag}
                       </span>

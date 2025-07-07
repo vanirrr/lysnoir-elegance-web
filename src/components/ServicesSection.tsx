@@ -33,6 +33,10 @@ const ServicesSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const content = entry.target.querySelector('.services-content');
+            if (content) {
+              content.classList.add('animate-fade-in-up');
+            }
             entry.target.querySelectorAll('.service-card').forEach((card, index) => {
               setTimeout(() => {
                 card.classList.add('animate-fade-in-up');
@@ -52,9 +56,9 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-black/70 backdrop-blur-sm">
+    <section ref={sectionRef} id="services" className="py-20 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="services-content space-y-16 opacity-0 translate-y-12 transition-all duration-1000">
+        <div className="services-content space-y-16">
           {/* Section Header */}
           <div className="text-center">
             <div className="flex items-center justify-center mb-8">
@@ -63,11 +67,11 @@ const ServicesSection = () => {
                 alt="Lysnoir Icon" 
                 className="h-49 w-auto mr-4 opacity-80"
               />
-              <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight text-shadow">
                 Nos <span className="text-gray-300">services</span>
               </h2>
             </div>
-            <p className="text-xl text-gray-300 font-roboto font-light max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 font-roboto font-light max-w-2xl mx-auto text-shadow">
               Des solutions sur mesure pour votre présence digitale
             </p>
           </div>
@@ -77,17 +81,17 @@ const ServicesSection = () => {
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className="service-card glass-card p-8 text-center opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
+                className="service-card glass-card p-8 text-center transition-all duration-500 hover:scale-105 group"
               >
                 <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-300 flex justify-center">
                   {service.icon}
                 </div>
                 
-                <h3 className="text-xl font-roboto font-bold text-white mb-4">
+                <h3 className="text-xl font-roboto font-bold text-white mb-4 text-shadow">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-400 font-roboto font-light leading-relaxed">
+                <p className="text-gray-300 font-roboto font-light leading-relaxed text-shadow">
                   {service.description}
                 </p>
               </div>
