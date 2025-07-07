@@ -1,11 +1,36 @@
-import React from 'react';
+
+import React, { useEffect, useRef } from 'react';
 import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
+  const footerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const content = entry.target.querySelector('.footer-content');
+            if (content) {
+              content.classList.add('scroll-animate', 'animate');
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer id="contact" className="bg-transparent py-16 border-t border-white/10">
+    <footer ref={footerRef} id="contact" className="py-16 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-8">
+        <div className="footer-content scroll-animate space-y-8">
           {/* Logo and heading */}
           <div className="space-y-4">
             <div className="flex items-center justify-center mb-6">

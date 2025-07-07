@@ -87,6 +87,17 @@ All colors MUST be HSL.
     letter-spacing: -0.025em;
   }
 
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+
+  .scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .animate-fade-in-up {
     opacity: 1 !important;
     transform: translateY(0) !important;

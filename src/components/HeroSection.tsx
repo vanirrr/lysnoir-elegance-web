@@ -11,7 +11,7 @@ const HeroSection = () => {
           if (entry.isIntersecting) {
             const content = entry.target.querySelector('.hero-content');
             if (content) {
-              content.classList.add('animate-fade-in-up');
+              content.classList.add('scroll-animate', 'animate');
             }
           }
         });
@@ -37,7 +37,7 @@ const HeroSection = () => {
     <section 
       ref={heroRef}
       id="accueil" 
-      className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
@@ -46,7 +46,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <div className="hero-content space-y-8 opacity-0 translate-y-24 transition-all duration-1000">
+        <div className="hero-content scroll-animate space-y-8">
           {/* Icon Logo above heading */}
           <div className="flex justify-center mb-8">
             <img 

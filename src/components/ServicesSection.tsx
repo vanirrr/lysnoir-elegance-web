@@ -33,9 +33,16 @@ const ServicesSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.service-card').forEach((card, index) => {
+            const title = entry.target.querySelector('.section-title');
+            const cards = entry.target.querySelectorAll('.service-card');
+            
+            if (title) {
+              title.classList.add('scroll-animate', 'animate');
+            }
+            
+            cards.forEach((card, index) => {
               setTimeout(() => {
-                card.classList.add('animate-fade-in-up');
+                card.classList.add('scroll-animate', 'animate');
               }, index * 150);
             });
           }
@@ -52,10 +59,10 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-transparent">
+    <section ref={sectionRef} id="services" className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-6">
+          <div className="section-title scroll-animate flex items-center justify-center mb-6">
             <img 
               src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
               alt="Lysnoir Icon" 
@@ -74,7 +81,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="service-card glass-card p-8 text-center opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
+              className="service-card scroll-animate glass-card p-8 text-center transition-all duration-500 hover:scale-105 group"
             >
               <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-300 flex justify-center">
                 {service.icon}

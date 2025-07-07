@@ -11,7 +11,7 @@ const AboutSection = () => {
           if (entry.isIntersecting) {
             const content = entry.target.querySelector('.about-content');
             if (content) {
-              content.classList.add('animate-fade-in-up');
+              content.classList.add('scroll-animate', 'animate');
             }
           }
         });
@@ -27,9 +27,9 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32 bg-transparent">
+    <section ref={sectionRef} id="a-propos" className="py-20 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="about-content space-y-8 opacity-0 translate-y-12 transition-all duration-1000">
+        <div className="about-content scroll-animate space-y-8">
           <div className="flex items-center justify-center mb-8">
             <img 
               src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
