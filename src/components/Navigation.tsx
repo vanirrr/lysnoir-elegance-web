@@ -43,7 +43,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
                 alt="Lysnoir Logo" 
-                className="h-24 lg:h-30 w-auto"
+                className="h-16 lg:h-20 w-auto"
               />
             </div>
 

@@ -57,11 +57,7 @@ All colors MUST be HSL.
 
   body {
     @apply text-foreground font-roboto;
-    background-image: url('/lovable-uploads/2b0b2d22-e077-4103-9468-2a21d1c756b7.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0d0d0d 100%);
     min-height: 100vh;
   }
 
@@ -91,16 +87,5 @@ All colors MUST be HSL.
     opacity: 1 !important;
     transform: translateY(0) !important;
     animation: fade-in-up 0.8s ease-out forwards;
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

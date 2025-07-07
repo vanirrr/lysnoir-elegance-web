@@ -33,10 +33,6 @@ const ServicesSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const content = entry.target.querySelector('.services-content');
-            if (content) {
-              content.classList.add('animate-fade-in-up');
-            }
             entry.target.querySelectorAll('.service-card').forEach((card, index) => {
               setTimeout(() => {
                 card.classList.add('animate-fade-in-up');
@@ -56,47 +52,43 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="py-20 lg:py-32">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="services-content space-y-16">
-          {/* Section Header */}
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-8">
-              <img 
-                src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
-                alt="Lysnoir Icon" 
-                className="h-49 w-auto mr-4 opacity-80"
-              />
-              <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight text-shadow">
-                Nos <span className="text-gray-300">services</span>
-              </h2>
-            </div>
-            <p className="text-xl text-gray-300 font-roboto font-light max-w-2xl mx-auto text-shadow">
-              Des solutions sur mesure pour votre présence digitale
-            </p>
+    <section ref={sectionRef} id="services" className="py-20 lg:py-32 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center mb-6">
+            <img 
+              src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
+              alt="Lysnoir Icon" 
+              className="h-16 w-auto mr-4 opacity-80"
+            />
+            <h2 className="text-4xl lg:text-6xl font-roboto font-bold text-white letter-spacing-tight">
+              Nos <span className="text-gray-300">services</span>
+            </h2>
           </div>
+          <p className="text-xl text-gray-400 font-roboto font-light max-w-2xl mx-auto">
+            Des solutions web complètes pour propulser votre présence digitale vers l'excellence
+          </p>
+        </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className="service-card glass-card p-8 text-center transition-all duration-500 hover:scale-105 group"
-              >
-                <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                  {service.icon}
-                </div>
-                
-                <h3 className="text-xl font-roboto font-bold text-white mb-4 text-shadow">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-300 font-roboto font-light leading-relaxed text-shadow">
-                  {service.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="service-card glass-card p-8 text-center opacity-0 translate-y-12 transition-all duration-500 hover:scale-105 group"
+            >
+              <div className="mb-6 text-white group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                {service.icon}
               </div>
-            ))}
-          </div>
+              
+              <h3 className="text-xl font-roboto font-bold text-white mb-4">
+                {service.title}
+              </h3>
+              
+              <p className="text-gray-400 font-roboto font-light leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

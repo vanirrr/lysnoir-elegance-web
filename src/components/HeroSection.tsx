@@ -37,7 +37,7 @@ const HeroSection = () => {
     <section 
       ref={heroRef}
       id="accueil" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 opacity-20">
@@ -47,14 +47,10 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div className="hero-content space-y-8 opacity-0 translate-y-24 transition-all duration-1000">
-          {/* Main Lysnoir Logo */}
-          <div className="flex justify-center mb-8">
-            <img 
-              src="/lovable-uploads/0c024d14-7668-4aa9-8324-62e650a3dff9.png" 
-              alt="Lysnoir Logo" 
-              className="h-64 lg:h-80 w-auto opacity-90"
-            />
-          </div>
+          {/* Main heading */}
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-helvetica font-bold text-white letter-spacing-tight text-shadow">
+            Lysnoir
+          </h1>
 
           {/* Description */}
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 font-roboto font-light max-w-3xl mx-auto leading-relaxed">

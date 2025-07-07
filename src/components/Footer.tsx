@@ -4,7 +4,7 @@ import { Mail, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-16 border-t border-white/10">
+    <footer id="contact" className="bg-transparent py-16 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
           {/* Logo and heading */}
@@ -13,13 +13,13 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/3fb6db0d-8bde-4b6e-941e-ed00b60a43a5.png" 
                 alt="Lysnoir Icon" 
-                className="h-49 w-auto mr-4 opacity-80"
+                className="h-16 w-auto mr-4 opacity-80"
               />
-              <h2 className="text-4xl lg:text-5xl font-helvetica font-bold text-white letter-spacing-tight text-shadow">
+              <h2 className="text-4xl lg:text-5xl font-helvetica font-bold text-white letter-spacing-tight">
                 Lysnoir
               </h2>
             </div>
-            <p className="text-xl text-gray-300 font-roboto font-light text-shadow">
+            <p className="text-xl text-gray-300 font-roboto font-light">
               Prêt à créer quelque chose d'exceptionnel ensemble ?
             </p>
           </div>
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="pt-8 border-t border-white/10">
-            <p className="text-gray-400 font-roboto font-light text-shadow">
+            <p className="text-gray-400 font-roboto font-light">
               © 2024 Lysnoir. Tous droits réservés. Développement web premium en Algérie.
             </p>
           </div>
